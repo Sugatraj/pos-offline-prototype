@@ -6,13 +6,13 @@ const win = new BrowserWindow({
 	width: 800,
 	height: 600, 
 	webPreferences: {
-	// nodeIntegration: true
 	preload: path.join(__dirname, 'preload.js'),
+	nodeIntegration: false,
 	contextIsolation: true,
 	}
        });
 
-     win.loadFile('http://localhost:5173');
+     win.loadURL('http://localhost:5173');
 }
 
 app.whenReady().then(() => {

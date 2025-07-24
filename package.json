@@ -2,9 +2,10 @@
   "name": "pos-offline-prototype",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "main": "electron-main.js",
+
   "scripts": {
-    "dev": "concurrently \"vite\" \"electron .",
+    "dev": "concurrently \"vite\" \"electron .\"",
     "build": "vite build",
     "start": "electron .",
     "lint": "eslint .",
