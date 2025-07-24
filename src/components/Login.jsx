@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react'
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 function Login() {
     const [data, setData] = useState('')
     const [statusCode, setStatusCode] = useState(null)
     const [message, setMessage] = useState("ss")
     const numInputRef = useRef(null)
+    const navigate = useNavigate()
 
     function handleClick() {
 
@@ -31,7 +33,9 @@ function Login() {
                 })
             .then(response => {
                 setMessage('Login Successful !')
-
+                setTimeout(
+                    navigate("/home")
+                )
                 setStatusCode(response.status)
 
 
